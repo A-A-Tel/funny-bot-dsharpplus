@@ -1,7 +1,12 @@
 using Meowl;
+using DSharpPlus;
+using DSharpPlus.Extensions;
 
-var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
+DotNetEnv.Env.Load();
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-var host = builder.Build();
-host.Run();
+builder.Services.AddDiscordClient(DotNetEnv.Env.GetString("TOKEN"), DiscordIntents.AllUnprivileged);
+builder.Services.ConfigureDiscordHandlers();
+
+IHost host = builder.Build();
+await host.RunAsync();
