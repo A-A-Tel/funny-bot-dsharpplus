@@ -7,7 +7,8 @@ public partial class HappyCommandGroup
 {
     [Command("dog")]
     [Description("Count dogs")]
-    public async ValueTask DogAsync(
+    public async ValueTask DogAsync
+    (
         CommandContext context,
         [Description("Dog amount 1")] int x,
         [Description("Dog amount 2")] int y

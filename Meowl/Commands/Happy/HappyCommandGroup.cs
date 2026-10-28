@@ -7,5 +7,4 @@ namespace Meowl.Commands.Happy;
 [Description("Commands related to happy animals.")]
 public partial class HappyCommandGroup
 {
-    
 }
