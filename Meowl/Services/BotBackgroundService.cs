@@ -1,8 +1,8 @@
 using DSharpPlus;
 
-namespace Meowl;
+namespace Meowl.Services;
 
-public class BotBackgroundService(ILogger<BotBackgroundService> logger, DiscordClient client) : BackgroundService
+public class BotBackgroundService(DiscordClient client) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {

@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-Meowl-0ecf85b8-befe-4aa7-8891-997a88aa11a7</UserSecretsId>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Meowl-0ecf85b8-befe-4aa7-8891-997a88aa11a7</UserSecretsId>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DotNetEnv" Version="3.2.0" />
-    <PackageReference Include="DSharpPlus" Version="5.0.0-nightly-02613" />
-    <PackageReference Include="DSharpPlus.Interactivity" Version="5.0.0-nightly-02613" />
-    <PackageReference Include="DSharpPlus.Lavalink" Version="5.0.0-nightly-02496" />
-    <PackageReference Include="DSharpPlus.SlashCommands" Version="5.0.0-nightly-02613" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.14" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="DotNetEnv" Version="3.2.0"/>
+        <PackageReference Include="DSharpPlus" Version="5.0.0-nightly-02613"/>
+        <PackageReference Include="DSharpPlus.Commands" Version="5.0.0-nightly-02613"/>
+        <PackageReference Include="DSharpPlus.Interactivity" Version="5.0.0-nightly-02613"/>
+        <PackageReference Include="DSharpPlus.Lavalink" Version="5.0.0-nightly-02496"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.14"/>
+    </ItemGroup>
 </Project>
