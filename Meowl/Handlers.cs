@@ -9,19 +9,29 @@ public static class Handlers
 {
     public static void ConfigureDiscordHandlers(this IServiceCollection services)
     {
-        services.ConfigureEventHandlers(b => b.HandleMessageCreated(HandleMessageCreated));
+        services.ConfigureEventHandlers(b => b
+            .HandleMessageCreated(HandleMessageCreated)
+            .HandleMessageDeleted(HandleMessageDeleted)
+        );
     }
 
     private static async Task HandleMessageCreated(DiscordClient client, MessageCreatedEventArgs args)
     {
-        
-        //                          Wemm            +        Annie
-        if (args.Author.Id is 1388582208431984721 or 1403595152232284274) return;
-        
-        DiscordMessageBuilder builder = new();
+        //                               Wemm         +++        Annie
+        if (args.Author.Id is 569342254565687346)
+        {
+            DiscordMessageBuilder builder = new()
+            {
+                FailOnInvalidReply = true,
+                Content = "Free speech was a mistake"
+            };
 
-        builder.AddTextDisplayComponent("Fuck you >:(");
-        builder.WithReply(args.Message.Id);
-        await builder.SendAsync(args.Channel);
+            builder.WithReply(args.Message.Id);
+            await builder.SendAsync(args.Channel);
+        }
+    }
+
+    private static async Task HandleMessageDeleted(DiscordClient client, MessageDeletedEventArgs args)
+    {
     }
 }
